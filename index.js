@@ -1,0 +1,5 @@
+EmployeeDB = function() {
+  this.employees = [];
+
+  
+}
