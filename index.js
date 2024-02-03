@@ -34,15 +34,6 @@ const EmployeeDB = {
   }
 };
 
-//Добавление нескольких сотрудников в базу данных
-EmployeeDB.addEmployee ("David Leonard", "Game Developer", "Level Designer");
-EmployeeDB.addEmployee ("Jim Lawrence", "Doctor", "Blood Research");
-EmployeeDB.addEmployee ("Aaron Drew", "Cartoonist", "Storyboard Artist");
-EmployeeDB.addEmployee ("Joseph Dallas", "Musician", "Pianist");
-
-//Чтение данных 
-EmployeeDB.displayEmployees();
-
 //Модифицируем данные
 
 EmployeeDB.capitaliseNames = function () {
@@ -56,7 +47,36 @@ EmployeeDB.convertToLowerCase = function () {
         employee.department = employee.department.toLowerCase();
     });
 };
-  
+
+function compareEmployees (employee1, employee2) {
+  if (employee1.name === employee2.name && employee1.deparment ===employee2.department) {
+    console.log ("These are the same people.");
+  } else {
+    console.log ("They're absolutely different people.");
+  }
+}
+
+const employee1 = {
+  name: "Jack Kennedy",
+  position: "Pizzeria Employee",
+  department: "Dayguard",
+}
+
+const employee2 = {
+  name: "Jack Kennedy",
+  position: "Pizzeria Employee",
+  department: "CEO",
+}
+
+
+
+EmployeeDB.addEmployee ("David Leonard", "Game Developer", "Level Designer");
+EmployeeDB.addEmployee ("Jim Lawrence", "Doctor", "Blood Research");
+EmployeeDB.addEmployee ("Aaron Drew", "Cartoonist", "Storyboard Artist");
+EmployeeDB.addEmployee ("Joseph Dallas", "Musician", "Pianist");
+
+EmployeeDB.displayEmployees();
+
 EmployeeDB.capitaliseNames();
 EmployeeDB.convertToLowerCase();
 EmployeeDB.displayEmployees();
@@ -64,3 +84,6 @@ EmployeeDB.displayEmployees();
 EmployeeDB.removeEmployee(1);
 EmployeeDB.updateEmployee(0, "Doctor Eggman", "Scientist", "Evil");
 EmployeeDB.displayEmployees();
+
+
+compareEmployees(employee1, employee2);
